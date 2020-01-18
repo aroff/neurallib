@@ -5,21 +5,23 @@
 class DataPattern
 {
 public:
-	std::vector<double> m_Input;
-	std::vector<double> m_Output;
-	DataPattern() {
-
-	}
-
-	DataPattern(WORD nEnt, WORD nSai);
+	DataPattern();
+	DataPattern(const std::vector<double> &inputs, const std::vector<double> &outputs);
 	~DataPattern();
+
+	const std::vector<double> &getInput() const { return m_Input; }
+	void setInput(size_t idx, double value) { m_Input[idx] = value; }
+	double getInput(size_t idx) const { return m_Input[idx]; }
+	
+	const std::vector<double> &getOutput() const { return m_Output; }
+	double getOutput(size_t idx) const { return m_Output[idx]; }
+	void setOutput(size_t idx, double value) { m_Output[idx] = value; }
 
 	void Load(std::ifstream &infile);
 
 private:
-	void DefineEntrada(WORD idx, double value) { m_Input[idx] = value; }
-	void DefineSaida(WORD idx, double value) { m_Output[idx] = value; }
-	double LerEntrada(WORD idx) { return m_Input[idx]; }
-	double LerSaida(WORD idx) { return m_Output[idx]; }
+	std::vector<double> m_Input;
+	std::vector<double> m_Output;
+
 };
 

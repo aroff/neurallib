@@ -10,8 +10,6 @@
 #include <functional>
 #include <cassert>
 
-
-
 Neuron::~Neuron()
 {
 }
@@ -42,8 +40,6 @@ ProcessingNeuron::ProcessingNeuron(WORD n_inputs) :
 	};
 
 	std::generate(m_Weights.begin(), m_Weights.end(), f);
-
-	//m_Inputs.resize(n_inputs, 0.0);
 }
 
 std::unique_ptr <Neuron> NeuronFactory::Create(WORD n_inputs, LayerType layerType)
@@ -73,7 +69,6 @@ double Neuron::FeedForward(const std::vector<double> &values) const
 double ProcessingNeuron::Activation(double value) const {
 	return 1.0 / (1.0 + exp(-value));
 }
-
 
 double InputNeuron::Activation(double value) const
 {

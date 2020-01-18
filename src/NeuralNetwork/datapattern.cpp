@@ -1,23 +1,24 @@
 #include "stdafx.h"
 #include "datapattern.h"
 
+DataPattern::DataPattern() {
 
+}
 
-DataPattern::DataPattern(WORD n_inputs, WORD n_outputs)
+DataPattern::DataPattern(const std::vector<double> &inputs, const std::vector<double> &outputs)	:
+		m_Input(inputs)
+	,	m_Output(outputs)
 {
-	m_Input.resize(n_inputs);
-	m_Output.resize(n_outputs);
 }
 
 void DataPattern::Load(std::ifstream &infile)
 {
-	WORD i;
 	int ch;
 
-	for (i = 0; i < (m_Input.size()); i++)
+	for (size_t i = 0; i < (m_Input.size()); i++)
 		infile >> m_Input[i];
 
-	for (i = 0; i < m_Output.size(); i++)
+	for (size_t i = 0; i < m_Output.size(); i++)
 		infile >> m_Output[i];
 
 
@@ -35,4 +36,3 @@ void DataPattern::Load(std::ifstream &infile)
 DataPattern::~DataPattern()
 {
 }
-

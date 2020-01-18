@@ -5,18 +5,16 @@
 class Layer	
 {
 public:
-	size_t size() const { return valores_de_saida.size(); }
-	//WORD nEntradas_por_Neuronio;
-	Layer(WORD nNeu, WORD nEntradasNeuronio, LayerType tipo_camada);
+	Layer(size_t n_neurons, size_t n_inputs, LayerType layerType);
 	~Layer();
-	LayerType m_LayerType;
-	void DefineLR(double lr);
+	void setLearningRate(double lr);
+	size_t size() const { return m_OutputValues.size(); }
 
 	const std::vector<double> &FeedForward(const std::vector<double> &values);
 
-	std::vector<std::unique_ptr<Neuron>> neuro;
+protected:
+	std::vector<std::unique_ptr<Neuron>> m_Neurons;
 	friend class NeuralNetwork;
-
-//protected:
-	std::vector<double> valores_de_saida; // Vetor de saídas
+	LayerType m_LayerType;
+	std::vector<double> m_OutputValues; // output values
 };

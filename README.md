@@ -36,6 +36,6 @@ r.Estimate(p); // Estimate neural network parameters
 
 ## Download or fork
 ```
-$ git clone 
+$ git clone git@github.com:aroff/neurallib.git
 ```
 

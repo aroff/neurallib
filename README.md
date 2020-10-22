@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/25c99210cb0941e5ac30bf0ee2ea5584)](https://app.codacy.com/manual/aroff/neurallib?utm_source=github.com&utm_medium=referral&utm_content=aroff/neurallib&utm_campaign=Badge_Grade_Settings)
 
-This is a repo for building a multipurpose C++ 3-Layer Neural Network Library from scratch in C++. Original code was built in 1998 as part of author's Barchelor final project and was adapted to be compiled in modern compilers. 
+This is a repo for building a multipurpose C++ 3-Layer Neural Network Library in C++. Original code was built in 1998 as part of author's Bachelor final project and was adapted to be compiled in modern compilers. 
 This version was compiled in Visual Studio 2017 and uses C++14 features.
 
 ## Simple Usage
